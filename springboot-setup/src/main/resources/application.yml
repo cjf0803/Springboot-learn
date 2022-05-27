@@ -1,0 +1,13 @@
+
+spring:
+  datasource:
+    name: cjf  #????
+    url: jdbc:mysql://localhost:3306/cjf #url
+    username: root  #???
+    password: 13326chen  #??
+    driver-class-name: com.mysql.jdbc.Driver  #???????
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #??????
+  type-aliases-package: com.example.test.bean #?????
