@@ -20,23 +20,24 @@ public class UserController {
 
    //新增
    @PostMapping("/add")
-   public Result addUser(User user){
+   public Result addUser(@RequestBody User user){
        userService.add(user);
-       return new Result<>(200,"添加成功");
+
+       return new Result<>(200,"添加成功",userService.getAllUser());
 
    }
    //修改
    @PutMapping("/{id}")
-   public Result updateUser(User user){
+   public Result updateUser(@RequestBody User user){
        userService.update(user);
-       return new Result<>(200,"修改成功");
+       return new Result<>(200,"修改成功",userService.getAllUser());
 
    }
     //删除
     @DeleteMapping ("/{id}")
     public Result deleteUser(@PathVariable Integer id){
         userService.delete(id);
-        return new Result<>(200,"删除成功");
+        return new Result<>(200,"删除成功",userService.getAllUser());
 
     }
 
